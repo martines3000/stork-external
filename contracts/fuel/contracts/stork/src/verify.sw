@@ -8,7 +8,7 @@ use std::crypto::message::Message;
 use std::u128::U128;
 use std::vm::evm::evm_address::EvmAddress;
 
-use sway_libs::signed_integers::i128::I128;
+use signed_int::i128::I128;
 
 pub fn verify_stork_signature(
     stork_pubkey: EvmAddress,
@@ -323,8 +323,7 @@ fn test_try_get_rsv_signature_from_parts() {
     let mut expected_bytes = Bytes::new();
     expected_bytes.append(Bytes::from(r));
     expected_bytes.append(Bytes::from(
-        s
-        | b256::from(0x8000000000000000000000000000000000000000000000000000000000000000),
+        s | b256::from(0x8000000000000000000000000000000000000000000000000000000000000000),
     ));
 
     assert(sig_bytes == expected_bytes);

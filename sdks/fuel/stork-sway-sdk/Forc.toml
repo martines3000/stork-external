@@ -5,4 +5,4 @@ license = "Apache-2.0"
 name = "stork_sway_sdk"
 
 [dependencies]
-sway_libs = { git = "https://github.com/FuelLabs/sway-libs", tag = "v0.25.2" }
+signed_int = "0.26.1"
